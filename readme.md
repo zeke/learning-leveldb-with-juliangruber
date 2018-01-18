@@ -1,4 +1,4 @@
-# LevelDB in One Hour
+# Learning LevelDB
 
 [sourceranks-data](https://github.com/nice-registry/sourceranks/tree/master/packages/sourceranks-data)
 is @zeke's first attempt to use LevelDB. This project led to some questions
