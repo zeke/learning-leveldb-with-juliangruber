@@ -7,7 +7,7 @@ found many exciting new uses for it outside of the browser.
 I sat down with LevelDB aficionado [Julian Gruber](http://juliangruber.com/)
 to talk about what LevelDB is, how to use it, and where the project is headed.
 
-As an employee of GitHub, I have an annual budget that I can spend on 
+As a GitHub employee, I have an annual budget that I can spend on 
 "Learning and Development". In exchange for Julian's time I donated $100 to 
 his charity of choice, 
 [Code for Science & Society](https://donate.datproject.org/). 
