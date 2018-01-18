@@ -1,32 +1,89 @@
 # Learning LevelDB
 
-[sourceranks-data](https://github.com/nice-registry/sourceranks/tree/master/packages/sourceranks-data)
-is @zeke's first attempt to use LevelDB. This project led to some questions
-for @juliangruber.
+LevelDB is a key-value store created by Google for use in the Chromium browser.
+In typical Node.js style, some cool kids have run wild with the technology and
+found many exciting new uses for it outside of the browser.
+
+I sat down with LevelDB aficionado [Julian Gruber](http://juliangruber.com/)
+to talk about what LevelDB is, how to use it, and where the project is headed.
+
+Here's the 40-minute video. We've added notes and links from our conversation below:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-ofwZi9Xj44?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+## I'm just getting started with LevelDB. Which module(s) should I install?
 
 ```sh
-git clone https://github.com/nice-registry/sourceranks
-cd packages/sourceranks-data
+npm install level
 ```
 
-Questions to ask:
+[level](https://ghub.io) is the batteries-included module that most people should use. It bundles
+[levelup](https://ghub.io/levelup) and
+[leveldown](https://ghub.io/leveldown), 
+and defaults to using the file system for storage.
 
-- Which module(s) should I install? (@level org needs some featured repos maybe)
-- I see lots of callbacks in the docs. What's promisified and ready for async functions?
-- How to save JSON? DIY Stringify?
-- Timestamps?
-- out of memory: https://gist.github.com/zeke/be521063146be0ec05049edb505e05c2
-- streams
-	- https://github.com/nice-registry/all-the-packages#why-streams
-	- https://github.com/nice-registry/all-the-packages/blob/master/index.js
-- search
-- indexing? (no)
-- emptying an entire database?
-- level repl and/or CLI ?
-	- https://www.npmjs.com/package/leveldb-repl
-	- https://github.com/fitzgen/glob-to-regexp enables queries like 'get *sess*'
-	- I can't get `lev` to work
-- objects can be keys?! (Key design must be an art...)
-- are keys case sensitive?
-- can multiple keys reference the same object?
-- how does leveldb work in the browser?
+## Where are the good LevelDB modules?
+
+The [@Level](https://github.com) org on GitHub has many, but there are more in 
+npm userland. Most packages start with `level-`. GitHub search is handy for 
+this.
+
+## Callbacks? Promises? Async/Await?
+
+As of version 2, `level` supports Promises (and still support node-style 
+callbacks too). If you omit the callback argument, you'll get a Promise. 
+This means you can do this:
+
+```js
+const main = async () => {
+  const db = level('./my-db')
+
+  await db.put('foo', 'bar')
+  console.log(await db.get('foo'))
+}
+```
+
+As for the rest of LevelDB userland, many module still use callbacks. Your 
+mileage may vary.
+
+## Native Modules
+
+As of version 2, `level` uses [prebuild](https://github.com/prebuild/prebuild),
+for native code compilation. This means when you install `level`, your machine
+downloads a precompiled binary for your system from GitHub Releases, rather
+than compiling it on the fly.
+
+## How to save JSON?
+
+To save JSON objects, set the `valueEncoding` option when initializing the
+DB:
+
+```js
+const db = level('./db' {valueEncoding: 'json'})
+```
+
+This will allows you to save JSON with `db.put()` and retrieve it with 
+`db.get()`, without stringifying and parsing it yourself.
+
+## Timestamps
+
+LevelDB doesn't have timestamps. Roll your own.
+
+See also 
+[level-ttl](https://ghub.io/level-ttl) and 
+[level-version](https://ghub.io/level-version)
+
+## Search
+
+We didn't get too much into this, but it sounds like the essential things
+is key design. If space is not an issue, your keys can be very long.
+
+See also [level-search](https://ghub.io/level-search)
+
+## CLI / REPL
+
+Tools for interacting with your LevelDB:
+
+- [leveldb-repl](https://ghub.io/leveldb-repl)
+- [lev](https://ghub.io/lev)
+- [ldb](https://github.com/0x00A/ldb)
