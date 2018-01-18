@@ -1,4 +1,4 @@
-# Learning LevelDB
+![leveldb](https://user-images.githubusercontent.com/2289/35121759-6490fb0a-fc51-11e7-9dfd-dde9e2d09765.png)
 
 LevelDB is a key-value store created by Google for use in the Chromium browser.
 In typical Node.js style, some cool kids have run wild with the technology and
@@ -7,11 +7,15 @@ found many exciting new uses for it outside of the browser.
 I sat down with LevelDB aficionado [Julian Gruber](http://juliangruber.com/)
 to talk about what LevelDB is, how to use it, and where the project is headed.
 
-Here's the 40-minute video. We've added notes and links from our conversation below:
+## The Video
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/-ofwZi9Xj44?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+Here's the video of our 40-minute conversation:
 
-## I'm just getting started with LevelDB. Which module(s) should I install?
+📺 [Watch on YouTube](https://www.youtube.com/watch?v=-ofwZi9Xj44)
+
+## Questions / Notes
+
+#### I'm just getting started with LevelDB. Which module(s) should I install?
 
 ```sh
 npm install level
@@ -22,13 +26,13 @@ npm install level
 [leveldown](https://ghub.io/leveldown), 
 and defaults to using the file system for storage.
 
-## Where are the good LevelDB modules?
+#### Where are the good LevelDB modules?
 
 The [@Level](https://github.com) org on GitHub has many, but there are more in 
 npm userland. Most packages start with `level-`. GitHub search is handy for 
 this.
 
-## Callbacks? Promises? Async/Await?
+#### Callbacks? Promises? Async/Await?
 
 As of version 2, `level` supports Promises (and still support node-style 
 callbacks too). If you omit the callback argument, you'll get a Promise. 
@@ -46,14 +50,14 @@ const main = async () => {
 As for the rest of LevelDB userland, many module still use callbacks. Your 
 mileage may vary.
 
-## Native Modules
+#### Native Modules
 
 As of version 2, `level` uses [prebuild](https://github.com/prebuild/prebuild),
 for native code compilation. This means when you install `level`, your machine
 downloads a precompiled binary for your system from GitHub Releases, rather
 than compiling it on the fly.
 
-## How to save JSON?
+#### How to save JSON?
 
 To save JSON objects, set the `valueEncoding` option when initializing the
 DB:
@@ -65,7 +69,7 @@ const db = level('./db' {valueEncoding: 'json'})
 This will allows you to save JSON with `db.put()` and retrieve it with 
 `db.get()`, without stringifying and parsing it yourself.
 
-## Timestamps
+#### Timestamps
 
 LevelDB doesn't have timestamps. Roll your own.
 
@@ -73,14 +77,14 @@ See also
 [level-ttl](https://ghub.io/level-ttl) and 
 [level-version](https://ghub.io/level-version)
 
-## Search
+#### Search
 
 We didn't get too much into this, but it sounds like the essential things
 is key design. If space is not an issue, your keys can be very long.
 
 See also [level-search](https://ghub.io/level-search)
 
-## CLI / REPL
+#### CLI / REPL
 
 Tools for interacting with your LevelDB:
 
