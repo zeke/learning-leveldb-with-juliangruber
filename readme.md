@@ -13,7 +13,7 @@ his charity of choice,
 [Code for Science & Society](https://donate.datproject.org/). 
 Thanks to GitHub and Julian for making this possible. 🙏
 
-🎧 [Listen on YouTube](https://youtu.be/MweS0S749ok).
+🎧 [Listen to our 40-minute conversation on YouTube](https://youtu.be/MweS0S749ok).
 
 ## Questions / Notes
 
