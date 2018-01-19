@@ -1,0 +1,33 @@
+<svg width="512" height="512" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>leveldb-logo</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(190 347)">
+<rect x="-190" y="-347" width="512" height="512" fill="#E5E5E5"/>
+<clipPath id="clip-0" clip-rule="evenodd">
+<path d="M -190 -347L 322 -347L 322 165L -190 165L -190 -347Z" fill="#FFFFFF"/>
+</clipPath>
+<g id="leveldb-logo" clip-path="url(#clip-0)">
+<path d="M -190 -347L 322 -347L 322 165L -190 165L -190 -347Z" fill="#FFFFFF"/>
+<g id="leveldb">
+<g id="Vector">
+<use xlink:href="#path0_fill" transform="translate(-99 -208.975)" fill="#D4EB95"/>
+</g>
+<g id="Vector">
+<use xlink:href="#path1_fill" transform="translate(-99 -235.302)" fill="#96DC75"/>
+</g>
+<g id="Vector" opacity="0.553">
+<use xlink:href="#path2_fill" transform="translate(-99 -302)" fill="#317342"/>
+</g>
+<g id="Vector" opacity="0.553">
+<use xlink:href="#path3_fill" transform="translate(-99 -221.262)" fill="#34954C"/>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 165 -2.36017e-06L 0 81.4588L 0 247.136L 165 329.975L 330 247.136L 330 81.4588L 165 -2.36017e-06Z"/>
+<path id="path1_fill" d="M 165 -1.37676e-06L 0 81.4562L 0 247.135L 165 329.974L 330 247.135L 330 81.4562L 165 -1.37676e-06Z"/>
+<path id="path2_fill" d="M 165 0L 0 81.4588L 0 247.136L 165 329.975L 330 247.136L 330 81.4588L 165 0Z"/>
+<path id="path3_fill" d="M 165 77.5403L 0 6.29378e-07L 0 166.158L 165 249.237L 330 166.158L 330 6.29378e-07L 165 77.5403L 165 77.5403Z"/>
+</defs>
+</svg>
