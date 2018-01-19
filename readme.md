@@ -36,7 +36,7 @@ this.
 
 #### Callbacks? Promises? Async/Await?
 
-As of version 2, `level` supports Promises (and still support node-style 
+As of version 2, `level` supports Promises (and still supports node-style 
 callbacks too). If you omit the callback argument, you'll get a Promise. 
 This means you can do this:
 
@@ -54,7 +54,7 @@ mileage may vary.
 
 #### Native Modules
 
-As of version 2, `level` uses [prebuild](https://github.com/prebuild/prebuild),
+Many backends, like the default `leveldown`, use [prebuild](https://github.com/prebuild/prebuild),
 for native code compilation. This means when you install `level`, your machine
 downloads a precompiled binary for your system from GitHub Releases, rather
 than compiling it on the fly.
@@ -71,18 +71,27 @@ const db = level('./db' {valueEncoding: 'json'})
 This will allows you to save JSON with `db.put()` and retrieve it with 
 `db.get()`, without stringifying and parsing it yourself.
 
+You can alternatively also set this option on a call by call basis,
+if that fits your use case better:
+
+```js
+db.put('key', { some: 'json' }, { valueEncoding: 'json' })
+```
+
 #### Timestamps
 
 LevelDB doesn't have timestamps. Roll your own.
 
 See also 
-[level-ttl](https://ghub.io/level-ttl) and 
-[level-version](https://ghub.io/level-version)
+[level-ttl](https://ghub.io/level-ttl), 
+[level-version](https://ghub.io/level-version) and
+[level-timestamps](https://github.com/juliangruber/level-timestamps)
 
 #### Search
 
 We didn't get too much into this, but it sounds like the essential things
-is key design. If space is not an issue, your keys can be very long.
+is key design. Storing indexes is very cheap, and if space is not an issue,
+you can store data redundantly to prevent additional lookups.
 
 See also [level-search](https://ghub.io/level-search)
 
