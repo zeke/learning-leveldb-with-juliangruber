@@ -13,7 +13,7 @@ his charity of choice,
 [Code for Science & Society](https://donate.datproject.org/). 
 Thanks to GitHub and Julian for making this possible. 🙏
 
-🎧 [Listen to our 40-minute conversation on YouTube](https://youtu.be/MweS0S749ok).
+🎧 [Listen to our 40-minute conversation on YouTube](https://youtu.be/-ofwZi9Xj44).
 
 ## Questions / Notes
 
@@ -82,10 +82,9 @@ db.put('key', { some: 'json' }, { valueEncoding: 'json' })
 
 LevelDB doesn't have timestamps. Roll your own.
 
-See also 
-[level-ttl](https://ghub.io/level-ttl), 
-[level-version](https://ghub.io/level-version) and
-[level-timestamps](https://github.com/juliangruber/level-timestamps)
+See also [level-timestamps](https://github.com/juliangruber/level-timestamps),
+[level-ttl](https://ghub.io/level-ttl), and
+[level-version](https://ghub.io/level-version).
 
 #### Search
 
