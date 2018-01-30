@@ -49,7 +49,7 @@ const main = async () => {
 }
 ```
 
-As for the rest of LevelDB userland, many module still use callbacks. Your 
+As for the rest of LevelDB userland, many modules still use callbacks. Your 
 mileage may vary.
 
 #### Avoiding race conditions
