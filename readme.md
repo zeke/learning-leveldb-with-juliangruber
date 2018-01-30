@@ -52,6 +52,12 @@ const main = async () => {
 As for the rest of LevelDB userland, many module still use callbacks. Your 
 mileage may vary.
 
+#### Avoiding race conditions
+
+levelDB is a single-process library; That means it does create a follower on your disk that stores all the data, and only one instance can point to it. However, there's a module (created by Julian) called 
+[multilevel](https://ghub.io/multilevel)
+which exposes a levelDB over the network, to be used by multiple processes, with levelUp's API.
+
 #### Native Modules
 
 Many backends, like the default `leveldown`, use [prebuild](https://github.com/prebuild/prebuild),
